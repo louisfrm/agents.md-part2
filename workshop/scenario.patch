@@ -1,0 +1,14 @@
+diff --git a/pages/api/go.ts b/pages/api/go.ts
+new file mode 100644
+index 0000000..f7e9d44
+--- /dev/null
++++ b/pages/api/go.ts
+@@ -0,0 +1,8 @@
++import type { NextApiRequest, NextApiResponse } from "next";
++
++// Raccourci vers les pages du site, proposé dans une contribution à relire.
++export default function handler(req: NextApiRequest, res: NextApiResponse) {
++  const to = typeof req.query.to === "string" ? req.query.to : "/";
++
++  res.redirect(307, to);
++}
